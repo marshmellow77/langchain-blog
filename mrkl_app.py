@@ -33,12 +33,14 @@ tools = [
     )
 ]
 
-mrkl = initialize_agent(tools, llm, agent="zero-shot-react-description")
+mrkl = initialize_agent(tools, llm, agent="zero-shot-react-description", verbose=True)
 
-query = "Who is the prime minister of the UK?\nWhere was he or she born?\nHow far is their birth place from London?"
+query = "Who is the prime minister of the UK? Where was he or she born? How far is their birth place from London?"
+print(f"Query: {query}")
 response = mrkl.run(query)
-print(f"Query: {query}\n\nResponse: {response}")
+print(f"\nResponse: {response}")
 
-query = "What is the full name of the artist who\nrecently released an album called 'The Storm Before the Calm'\nand are they in the FooBar database?\nIf so, what albums of theirs are in the FooBar database?"
+query = "What is the full name of the artist who recently released an album called 'The Storm Before the Calm' and are they in the FooBar database? If so, what albums of theirs are in the FooBar database?"
+print(f"Query: {query}")
 response = mrkl.run(query)
-print(f"Query: {query}\n\nResponse: {response}")
+print(f"\nResponse: {response}")
